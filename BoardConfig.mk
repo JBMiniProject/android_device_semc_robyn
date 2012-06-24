@@ -27,7 +27,6 @@
 # Camera
 USE_CAMERA_STUB := true
 BOARD_USES_ECLAIR_LIBCAMERA := true
-BOARD_CAMERA_LIBRARIES := camera.msm7x27.so libcameraservice libcamera libcamera_client.so liboemcamera.so
 
 # inherit from the proprietary version
 -include vendor/semc/robyn/BoardConfigVendor.mk
@@ -99,6 +98,13 @@ TARGET_USES_GENLOCK := true
 
 # Fix Refrashrate
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=49 -DQCOM_HARDWARE
+
+# Overlay (HDMI Panel)
+TARGET_USES_C2D_COMPOSITION := false
+TARGET_USES_OVERLAY := false
+TARGET_HAVE_BYPASS := false
+TARGET_USES_SF_BYPASS := false
+TARGET_QCOM_HDMI_OUT := false
 
 # GPS
 BOARD_USES_QCOM_HARDWARE := true
