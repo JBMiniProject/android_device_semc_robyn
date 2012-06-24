@@ -110,7 +110,9 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libopencorehw
 
-PRODUCT_LOCALES += mdpi
+PRODUCT_LOCALES += \
+    mdpi \
+    ldpi
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
