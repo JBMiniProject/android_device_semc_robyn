@@ -28,7 +28,7 @@
 USE_CAMERA_STUB := true
 BOARD_USES_ECLAIR_LIBCAMERA := true
 BOARD_USE_FROYO_LIBCAMERA := true
-BOARD_CAMERA_LIBRARIES := camera.msm7x27.so libcameraservice libcamera libcamera_client.so liboemcamera.so
+BOARD_CAMERA_LIBRARIES := libcameraservice libcamera
 
 # inherit from the proprietary version
 -include vendor/semc/robyn/BoardConfigVendor.mk
@@ -115,9 +115,6 @@ BOARD_USES_QCOM_GPS := true
 BOARD_VENDOR_QCOM_AMSS_VERSION := 1240
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := delta
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
-
-# Sensors
-TARGET_USES_OLD_LIBSENSORS_HAL:=true
 
 # Touchscreen
 BOARD_USE_LEGACY_TOUCHSCREEN := true

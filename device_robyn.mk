@@ -107,15 +107,13 @@ PRODUCT_PACKAGES += \
     audio_policy.delta \
     gralloc.msm7x27 \
     hwcomposer.default \
-	hwcomposer.msm7x27 \
+    hwcomposer.msm7x27 \
     gps.delta \
     libOmxCore \
     libmm-omxcore \
     libopencorehw
 
-PRODUCT_LOCALES += \
-    mdpi \
-    ldpi
+PRODUCT_LOCALES += mdpi
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
