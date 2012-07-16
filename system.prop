@@ -48,7 +48,7 @@ debug.gr.numframebuffers=2
 ro.compcache.default=18
 video.accelerate.hw=1
 persist.service.zram=1
-persist.sys.use_16bpp_alpha=0
+persist.sys.use_16bpp_alpha=1
 persist.sys.use_dithering=1
 
 # LCD
@@ -65,7 +65,7 @@ persist.sys.usb.config=mass_storage,adb
 # Dalvik tweaks
 dalvik.vm.dexopt-flags=m=y
 dalvik.vm.checkjni=false
-dalvik.vm.heapsize=48m
+dalvik.vm.heapsize=32m
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.dexopt-data-only=1
 dalvik.vm.stack-trace-file=/data/anr/traces.txt

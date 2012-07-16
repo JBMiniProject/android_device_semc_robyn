@@ -24,14 +24,14 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
+# inherit from the proprietary version
+-include device/semc/robyn/BoardConfigVendor.mk
+
 # Camera
 USE_CAMERA_STUB := true
 BOARD_USES_ECLAIR_LIBCAMERA := true
 BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_CAMERA_LIBRARIES := libcameraservice libcamera
-
-# inherit from the proprietary version
--include vendor/semc/robyn/BoardConfigVendor.mk
 
 # Inclide headers
 TARGET_SPECIFIC_HEADER_PATH := device/semc/robyn/include
@@ -39,10 +39,10 @@ TARGET_SPECIFIC_HEADER_PATH := device/semc/robyn/include
 # Platform
 TARGET_BOARD_PLATFORM := msm7x27
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-TARGET_ARCH_VARIANT := armv6-vfp
-TARGET_CPU_ABI := armeabi-v6l
+TARGET_CPU_ABI := armeabi-v6j
 TARGET_CPU_ABI2 := armeabi
-ARCH_ARM_HAVE_VFP := true
+TARGET_ARCH_VARIANT := armv6-vfp
+
 
 # Info
 TARGET_BOOTLOADER_BOARD_NAME := delta
@@ -56,9 +56,9 @@ BOARD_KERNEL_CMDLINE := console=null
 BOARD_KERNEL_BASE := 0x20000000
 
 # FM Radio
-BOARD_HAVE_FM_RADIO := true
-BOARD_HAVE_FM_RADIO_TI := true
-BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_HAVE_FM_RADIO_TI := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 
 # Wifi
 BOARD_WPA_SUPPLICANT_DRIVER := CUSTOM
@@ -109,18 +109,14 @@ TARGET_USES_SF_BYPASS := false
 TARGET_QCOM_HDMI_OUT := false
 
 # GPS
-BOARD_USES_QCOM_HARDWARE := true
-BOARD_USES_QCOM_LIBS := true
-BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_AMSS_VERSION := 1240
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := delta
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
+#BOARD_USES_QCOM_HARDWARE := true
+#BOARD_USES_QCOM_LIBS := true
 
 # Touchscreen
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 # Recovery
-BOARD_CUSTOM_BOOTIMG_MK := device/semc/robyn/custombootimg.mk
+#BOARD_CUSTOM_BOOTIMG_MK := device/semc/robyn/custombootimg.mk
 TARGET_RECOVERY_PRE_COMMAND := "mkdir /cache/recovery;touch /cache/recovery/boot;sync;"
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_USES_RECOVERY_CHARGEMODE := false
