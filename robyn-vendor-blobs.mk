@@ -17,6 +17,7 @@
 # Prebuilt libraries that are needed to build open-source libraries
 
 PRODUCT_COPY_FILES += \
+    device/semc/robyn/proprietary/app/Torch.apk:system/app/FileManager.apk \
     device/semc/robyn/proprietary/app/Torch.apk:system/app/Torch.apk \
     device/semc/robyn/proprietary/bin/akmd2:system/bin/akmd2 \
     device/semc/robyn/proprietary/bin/chargemon:system/bin/chargemon \
@@ -53,9 +54,6 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
     device/semc/robyn/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
     device/semc/robyn/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
-    device/semc/robyn/proprietary/lib/hw/lights.robyn.so:system/lib/hw/lights.robyn.so \
-    device/semc/robyn/proprietary/lib/hw/sensors.goldfish.so:system/lib/hw/sensors.goldfish.so \
-    device/semc/robyn/proprietary/lib/hw/sensors.robyn.so:system/lib/hw/sensors.robyn.so \
     device/semc/robyn/proprietary/lib/libauth.so:system/lib/libauth.so \
     device/semc/robyn/proprietary/lib/libC2D2.so:system/lib/libC2D2.so \
     device/semc/robyn/proprietary/lib/libcamera.so:system/lib/libcamera.so \
@@ -98,11 +96,9 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \
     device/semc/robyn/proprietary/lib/libqmi.so:system/lib/libqmi.so \
     device/semc/robyn/proprietary/lib/libqueue.so:system/lib/libqueue.so \
-    device/semc/robyn/proprietary/lib/libril.so:system/lib/libril.so \
     device/semc/robyn/proprietary/lib/librpc.so:system/lib/librpc.so \
     device/semc/robyn/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
     device/semc/robyn/proprietary/lib/libsemc_ril.so:system/lib/libsemc_ril.so \
-    device/semc/robyn/proprietary/lib/libsensorservice.so:system/lib/libsensorservice.so \
     device/semc/robyn/proprietary/lib/libuim.so:system/lib/libuim.so \
     device/semc/robyn/proprietary/lib/libwms.so:system/lib/libwms.so \
     device/semc/robyn/proprietary/lib/libwmsts.so:system/lib/libwmsts.so \

@@ -25,4 +25,4 @@ LOCAL_PATH := device/semc/robyn/
 include $(CLEAR_VARS)
 
 # include the non-open-source counterpart to this file
--include vendor/semc/robyn/AndroidBoardVendor.mk
+-include device/semc/robyn/AndroidBoardVendor.mk
