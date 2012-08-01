@@ -17,7 +17,7 @@
 # Prebuilt libraries that are needed to build open-source libraries
 
 PRODUCT_COPY_FILES += \
-    device/semc/robyn/proprietary/app/Torch.apk:system/app/FileManager.apk \
+    device/semc/robyn/proprietary/app/FileManager.apk:system/app/FileManager.apk \
     device/semc/robyn/proprietary/app/Torch.apk:system/app/Torch.apk \
     device/semc/robyn/proprietary/bin/akmd2:system/bin/akmd2 \
     device/semc/robyn/proprietary/bin/chargemon:system/bin/chargemon \
@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/proprietary/bin/semc_chargalg:system/bin/semc_chargalg \
     device/semc/robyn/proprietary/bin/slidercounter:system/bin/slidercounter \
     device/semc/robyn/proprietary/bin/updatemiscta:system/bin/updatemiscta \
+    device/semc/robyn/proprietary/bin/rild:system/bin/rild \
     device/semc/robyn/proprietary/etc/firmware/fmc_init_1273.1.bts:system/etc/firmware/fmc_init_1273.1.bts \
     device/semc/robyn/proprietary/etc/firmware/fmc_init_1273.2.bts:system/etc/firmware/fmc_init_1273.2.bts \
     device/semc/robyn/proprietary/etc/firmware/fm_rx_init_1273.1.bts:system/etc/firmware/fm_rx_init_1273.1.bts \
@@ -98,6 +99,7 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/proprietary/lib/libqueue.so:system/lib/libqueue.so \
     device/semc/robyn/proprietary/lib/librpc.so:system/lib/librpc.so \
     device/semc/robyn/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \
+    device/semc/robyn/proprietary/lib/libril.so:system/lib/libril.so \
     device/semc/robyn/proprietary/lib/libsemc_ril.so:system/lib/libsemc_ril.so \
     device/semc/robyn/proprietary/lib/libuim.so:system/lib/libuim.so \
     device/semc/robyn/proprietary/lib/libwms.so:system/lib/libwms.so \

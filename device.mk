@@ -47,7 +47,6 @@ $(call inherit-product-if-exists, device/semc/robyn/robyn-vendor.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lights.default.so:system/lib/hw/lights.default.so \
     $(LOCAL_PATH)/prebuilt/lights.delta.so:system/lib/hw/lights.delta.so \
-    $(LOCAL_PATH)/prebuilt/libsensorservice.so:system/lib/libsensorservice.so \
     $(LOCAL_PATH)/prebuilt/sensors.delta.so:system/lib/hw/sensors.delta.so \
     $(LOCAL_PATH)/prebuilt/sensors.goldfish.so:system/lib/hw/sensors.goldfish.so
 
@@ -96,14 +95,23 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/wlan/wlan_cu:system/bin/wlan_cu \
     $(LOCAL_PATH)/prebuilt/wlan/wlan_loader:system/bin/wlan_loader
 
-# Ramdisk files
+# Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/init.delta.usb.rc:root/init.delta.usb.rc
+    $(LOCAL_PATH)/prebuilt/audio_policy.delta.so:system/lib/hw/audio_policy.delta.so \
+    $(LOCAL_PATH)/prebuilt/audio.primary.delta.so:system/lib/hw/audio.primary.delta.so \
+    $(LOCAL_PATH)/prebuilt/media_codecs.xml:system/etc/media_codecs.xml
 
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.delta \
     audio_policy.delta \
+    libaudioutils
+
+# Ramdisk files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/init.delta.usb.rc:root/init.delta.usb.rc
+
+PRODUCT_PACKAGES += \
     gralloc.msm7x27 \
     hwcomposer.default \
     hwcomposer.msm7x27 \
