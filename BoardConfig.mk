@@ -32,6 +32,7 @@ USE_CAMERA_STUB := true
 BOARD_USES_ECLAIR_LIBCAMERA := true
 BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_CAMERA_LIBRARIES := libcameraservice libcamera
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
 
 # Include headers
 TARGET_SPECIFIC_HEADER_PATH := device/semc/robyn/include
