@@ -120,7 +120,9 @@ PRODUCT_PACKAGES += \
     sensors.delta \
     libOmxCore \
     libmm-omxcore \
-    libopencorehw
+    libopencorehw \
+    LegacyCamera \
+    Launcher2
 
 PRODUCT_LOCALES += \
  		ldpi \
