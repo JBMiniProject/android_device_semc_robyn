@@ -51,7 +51,6 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/proprietary/etc/sensors.conf:system/etc/sensors.conf \
     device/semc/robyn/proprietary/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
     device/semc/robyn/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
-    device/semc/robyn/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
     device/semc/robyn/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
     device/semc/robyn/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
     device/semc/robyn/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
