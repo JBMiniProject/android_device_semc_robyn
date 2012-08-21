@@ -107,6 +107,16 @@ PRODUCT_PACKAGES += \
     audio_policy.delta \
     libaudioutils
 
+# OpenSSH
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
 # Ramdisk files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/init.delta.usb.rc:root/init.delta.usb.rc
