@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/wlan/wlan_loader:system/bin/wlan_loader
 
 # Audio
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/audio_policy.delta.so:system/lib/hw/audio_policy.delta.so \
     $(LOCAL_PATH)/prebuilt/audio.primary.delta.so:system/lib/hw/audio.primary.delta.so \
     $(LOCAL_PATH)/prebuilt/media_codecs.xml:system/etc/media_codecs.xml
@@ -185,6 +185,22 @@ PRODUCT_PACKAGES += \
 # ANT
 PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/AntHalService.apk:system/app/AntHalService.apk
+
+# Hciattach
+PRODUCT_COPY_FILES += \
+    device/semc/robyn/prebuilt/hciattach:system/bin/hciattach
+
+# A2SD
+PRODUCT_COPY_FILES += \
+    device/semc/robyn/prebuilt/a2sd:system/bin/a2sd \
+    device/semc/robyn/prebuilt/10apps2sd:system/etc/init.d/10apps2sd \
+    device/semc/robyn/prebuilt/05mountext:system/etc/init.d/05mountext \
+    device/semc/robyn/prebuilt/04modules:system/etc \
+    device/semc/robyn/prebuilt/zipalign:system/xbin/zipalign
+
+# for compcache
+PRODUCT_COPY_FILES += \
+        device/semc/robyn/prebuilt/rzscontrol:system/xbin/rzscontrol
 
 # FM Radio
 PRODUCT_PACKAGES += \
