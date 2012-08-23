@@ -15,7 +15,7 @@
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := robyn
+PRODUCT_NAME := jbmp_robyn
 PRODUCT_DEVICE := robyn
 PRODUCT_MODEL := E10i
 
@@ -27,18 +27,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
+# Extra prebuilt binaries
+PRODUCT_COPY_FILES += \
+    device/semc/robyn/prebuilt/com.sonyericsson.suquashi.jar:system/framework/com.sonyericsson.suquashi.jar \
+    device/semc/robyn/prebuilt/Radio.apk:system/app/Radio.apk \
+    device/semc/robyn/prebuilt/SemcSmfmf.jar:system/framework/SemcSmfmf.jar
+
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct..xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
 # proprietary side of the device
 $(call inherit-product-if-exists, device/semc/robyn/robyn-vendor.mk)
@@ -96,7 +107,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/wlan/wlan_loader:system/bin/wlan_loader
 
 # Audio
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/audio_policy.delta.so:system/lib/hw/audio_policy.delta.so \
     $(LOCAL_PATH)/prebuilt/audio.primary.delta.so:system/lib/hw/audio.primary.delta.so \
     $(LOCAL_PATH)/prebuilt/media_codecs.xml:system/etc/media_codecs.xml
@@ -107,26 +118,83 @@ PRODUCT_PACKAGES += \
     audio_policy.delta \
     libaudioutils
 
+# OpenSSH
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+	
+# Misc
++PRODUCT_PACKAGES += \
+     com.android.future.usb.accessory \
+     make_ext4fs \
+     setup_fs
+
+# Bugmailer
+PRODUCT_PACKAGES += \
+    send_bug
+
+PRODUCT_COPY_FILES += \
+    system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
+    system/extras/bugmailer/send_bug:system/bin/send_bug
+
 # Ramdisk files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/init.delta.usb.rc:root/init.delta.usb.rc
 
 PRODUCT_PACKAGES += \
+    gralloc.default \
     gralloc.msm7x27 \
     hwcomposer.default \
     hwcomposer.msm7x27 \
     gps.delta \
     lights.delta \
     sensors.delta \
-    libOmxCore \
-    libmm-omxcore \
-    libopencorehw \
-    LegacyCamera \
-    Launcher2
+    camera.msm7x27 \
+    libgenlock \
+    libmemalloc \
+    libtilerenderer \
+    libQcomUI \
+    liboverlay
 
 PRODUCT_LOCALES += \
  		ldpi \
 		mdpi
+
+# Omx
+PRODUCT_PACKAGES += \
+    libmm-omxcore \
+    libdivxdrmdecrypt \
+    libOmxCore \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw \
+    libopencorehw
+
+# Extra Packages
+PRODUCT_PACKAGES += \
+    FileManager \
+    LegacyCamera \
+    screencap \
+    Trebuchet
+
+# ANT
+PRODUCT_COPY_FILES += \
+    device/semc/robyn/prebuilt/AntHalService.apk:system/app/AntHalService.apk
+
+# FM Radio
+PRODUCT_PACKAGES += \
+    hciattach \
+    com.ti.fm.fmreceiverif.xml \
+    fmreceiverif \
+    Fmapplication \
+    libfmrx \
+    libfm_stack \
+    FmRxService
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
