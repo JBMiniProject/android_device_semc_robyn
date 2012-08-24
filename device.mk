@@ -30,8 +30,31 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 # Extra prebuilt binaries
 PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/com.sonyericsson.suquashi.jar:system/framework/com.sonyericsson.suquashi.jar \
-    device/semc/robyn/prebuilt/Radio.apk:system/app/Radio.apk \
     device/semc/robyn/prebuilt/SemcSmfmf.jar:system/framework/SemcSmfmf.jar
+
+#recovery resources
+PRODUCT_COPY_FILES += \
+    device/semc/robyn/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
+    device/semc/robyn/recovery/res/images/icon_firmware_install.png:recovery/root/res/images/icon_firmware_install.png \
+    device/semc/robyn/recovery/res/images/icon_clockwork.png:recovery/root/res/images/icon_clockwork.png \
+    device/semc/robyn/recovery/res/images/icon_error.png:recovery/root/res/images/icon_error.png \
+    device/semc/robyn/recovery/res/images/icon_installing.png:recovery/root/res/images/icon_installing.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay01.png:recovery/root/res/images/icon_installing_overlay01.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay02.png:recovery/root/res/images/icon_installing_overlay02.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay03.png:recovery/root/res/images/icon_installing_overlay03.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay04.png:recovery/root/res/images/icon_installing_overlay04.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay05.png:recovery/root/res/images/icon_installing_overlay05.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay06.png:recovery/root/res/images/icon_installing_overlay06.png \
+    device/semc/robyn/recovery/res/images/icon_installing_overlay07.png:recovery/root/res/images/icon_installing_overlay07.png \
+    device/semc/robyn/recovery/res/images/indeterminate01.png:recovery/root/res/images/indeterminate01.png \
+    device/semc/robyn/recovery/res/images/indeterminate02.png:recovery/root/res/images/indeterminate02.png \
+    device/semc/robyn/recovery/res/images/indeterminate03.png:recovery/root/res/images/indeterminate03.png \
+    device/semc/robyn/recovery/res/images/indeterminate04.png:recovery/root/res/images/indeterminate04.png \
+    device/semc/robyn/recovery/res/images/indeterminate05.png:recovery/root/res/images/indeterminate05.png \
+    device/semc/robyn/recovery/res/images/indeterminate06.png:recovery/root/res/images/indeterminate06.png \
+    device/semc/robyn/recovery/res/images/progress_empty.png:recovery/root/res/images/progress_empty.png \
+    device/semc/robyn/recovery/res/images/progress_fill.png:recovery/root/res/images/progress_fill.png \
+    device/semc/robyn/recovery/res/images/stitch.png:recovery/root/res/images/stitch.png
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -151,6 +174,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm7x27 \
     hwcomposer.default \
     hwcomposer.msm7x27 \
+    copybit.msm7x27 \
     gps.delta \
     lights.delta \
     sensors.delta \
@@ -180,6 +204,7 @@ PRODUCT_PACKAGES += \
     FileManager \
     LegacyCamera \
     screencap \
+    Provision \
     Trebuchet
 
 # ANT

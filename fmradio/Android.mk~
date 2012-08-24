@@ -16,10 +16,10 @@
 # Modified by Sony Ericsson Mobile Communications AB
 
 ifeq ($(BOARD_HAVE_FM_RADIO_TI),true)
-  include device/semc/robyn/fmradio/fm_stack/Android.mk
-#  include device/semc/robyn/fmradio/fm_app/Android.mk
-  include device/semc/robyn/fmradio/Fmapplication/Android.mk
-  include device/semc/robyn/fmradio/service/Android.mk
-  include device/semc/robyn/fmradio/service/src/jni/Android.mk
-  include device/semc/robyn/fmradio/fmreceiverif/Android.mk
+  include vendor/ti/fmradio/fm_stack/Android.mk
+#  include vendor/ti/fmradio/fm_app/Android.mk
+  include vendor/ti/fmradio/Fmapplication/Android.mk
+  include vendor/ti/fmradio/service/Android.mk
+  include vendor/ti/fmradio/service/src/jni/Android.mk
+  include vendor/ti/fmradio/fmreceiverif/Android.mk
 endif # SEMC_CFG_FM_SERVICE_TI
