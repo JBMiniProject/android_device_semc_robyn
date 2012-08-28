@@ -1,4 +1,4 @@
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),heroc)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),delta)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
@@ -8,7 +8,7 @@ include $(CLEAR_VARS)
 OMXCORE_CFLAGS += -D_ANDROID_
 OMXCORE_CFLAGS += -D_ENABLE_QC_MSG_LOG_
 
-ifeq ($(TARGET_BOARD_PLATFORM),msm7k)
+ifeq ($(TARGET_BOARD_PLATFORM),msm7x27)
     MM_CORE_TARGET = msm7k
 else
     $(error Unsupported target platform $(TARGET_BOARD_PLATFORM))

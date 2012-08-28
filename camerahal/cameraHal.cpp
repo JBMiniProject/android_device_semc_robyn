@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2012, Raviprasad V Mummidi.
+ * Copyright (C) 2012, Raviprasad V Mummidi
+ * Adapted for Jellybean by Vassilis Tsogkas
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,14 +24,12 @@
 #include <fcntl.h>
 #include <linux/ioctl.h>
 #include <linux/msm_mdp.h>
-#include <gralloc_priv.h>
 #include <ui/Rect.h>
 #include <ui/GraphicBufferMapper.h>
 #include <dlfcn.h>
 #include <cutils/properties.h>
 
 #define NO_ERROR 0
-//#define ALOGV ALOGI
 #define GRALLOC_USAGE_PMEM_PRIVATE_ADSP GRALLOC_USAGE_PRIVATE_0
 #define MSM_COPY_HW 1
 #define HWA 1
@@ -39,7 +38,6 @@
 #else
 #include "libhardware/modules/gralloc/gralloc_priv.h"
 #endif
-
 
 struct blitreq {
    unsigned int count;
@@ -76,8 +74,8 @@ camera_module_t HAL_MODULE_INFO_SYM = {
       version_major: 1,
       version_minor: 0,
       id: CAMERA_HARDWARE_MODULE_ID,
-      name: "Camera HAL for ICS",
-      author: "Raviprasad V Mummidi",
+      name: "Camera HAL for JB",
+      author: "Vassilis Tsogkas",
       methods: &camera_module_methods,
       dso: NULL,
       reserved: {0},
@@ -387,12 +385,12 @@ CameraHAL_FixupParams(android::CameraParameters &settings)
 {
 // FIXME TODO
    const char *preview_sizes =
-      "640x480,480x320,352x288,320x240,176x144";
+      "1280x720,800x480,768x432,720x480,640x480,576x432,480x320,384x288,352x288,320x240,240x160,176x144";
    const char *video_sizes =
-      "640x480,480x320,352x288,320x240,176x144";
-   const char *preferred_size       = "640x480";
+      "1280x720,800x480,720x480,640x480,352x288,320x240,176x144";
+   const char *preferred_size       = "480x320";
    const char *preview_frame_rates  = "30,27,24,15";
-   const char *preferred_frame_rate = "15";
+   const char *preferred_frame_rate = "30";
    const char *frame_rate_range     = "(15,30)";
    const char *preferred_horizontal_viewing_angle = "51.2";
    const char *preferred_vertical_viewing_angle = "39.4";
@@ -436,19 +434,16 @@ CameraHAL_FixupParams(android::CameraParameters &settings)
    }
 
    if (!settings.get(android::CameraParameters::KEY_SUPPORTED_PREVIEW_FPS_RANGE)) {
-      ALOGD("Setting KEY_PREVIEW_FPS_RANGE: %s\n", frame_rate_range);
       settings.set(android::CameraParameters::KEY_SUPPORTED_PREVIEW_FPS_RANGE,
                    frame_rate_range);
    }
 
    if (!settings.get(android::CameraParameters::KEY_HORIZONTAL_VIEW_ANGLE)) {
-      ALOGE("Setting KEY_HORIZONTAL_VIEW_ANGLE: %s\n", preferred_horizontal_viewing_angle);
       settings.set(android::CameraParameters::KEY_HORIZONTAL_VIEW_ANGLE,
                    preferred_horizontal_viewing_angle);
    }
 
    if (!settings.get(android::CameraParameters::KEY_VERTICAL_VIEW_ANGLE)) {
-      ALOGE("Setting KEY_VERTICAL_VIEW_ANGLE: %s\n", preferred_vertical_viewing_angle);
       settings.set(android::CameraParameters::KEY_VERTICAL_VIEW_ANGLE,
                    preferred_vertical_viewing_angle);
    }
@@ -582,8 +577,7 @@ qcamera_stop_recording(struct camera_device * device)
    /* TODO: Remove hack. */
    qCamera->disableMsgType(CAMERA_MSG_VIDEO_FRAME);
    qCamera->stopRecording();
-
-//   qcamera_start_preview(device);
+   qcamera_start_preview(device);
 }
 
 int
@@ -692,7 +686,7 @@ qcamera_release(struct camera_device * device)
    qCamera->release();
 }
 
-int 
+int
 qcamera_dump(struct camera_device * device, int fd)
 {
    ALOGV("qcamera_dump:\n");
@@ -731,7 +725,7 @@ qcamera_device_open(const hw_module_t* module, const char* name,
 
    void *libcameraHandle;
    int cameraId = atoi(name);
-   signal(SIGFPE,(*sighandle));
+   signal(SIGFPE,(*sighandle)); //
 
    ALOGD("qcamera_device_open: name:%s device:%p cameraId:%d\n",
         name, device, cameraId);

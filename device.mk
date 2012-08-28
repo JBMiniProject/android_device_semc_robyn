@@ -27,11 +27,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
-# Extra prebuilt binaries
-PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/com.sonyericsson.suquashi.jar:system/framework/com.sonyericsson.suquashi.jar \
-    device/semc/robyn/prebuilt/SemcSmfmf.jar:system/framework/SemcSmfmf.jar
-
 #recovery resources
 PRODUCT_COPY_FILES += \
     device/semc/robyn/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
@@ -206,10 +201,6 @@ PRODUCT_PACKAGES += \
     screencap \
     Provision \
     Trebuchet
-
-# ANT
-PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/AntHalService.apk:system/app/AntHalService.apk
 
 # Hciattach
 PRODUCT_COPY_FILES += \

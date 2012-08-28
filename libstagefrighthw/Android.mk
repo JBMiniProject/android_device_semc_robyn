@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),heroc)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),delta)
 
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
