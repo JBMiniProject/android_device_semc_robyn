@@ -27,9 +27,6 @@
 # inherit from the common version
 -include device/semc/msm7x27-common/BoardConfigCommon.mk
 
-# include the non-open-source counterpart to this file
--include device/semc/robyn/robyn-vendor.mk
-
 # Camera
 USE_CAMERA_STUB := true
 
