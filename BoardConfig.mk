@@ -27,13 +27,16 @@
 # inherit from the common version
 -include device/semc/msm7x27-common/BoardConfigCommon.mk
 
+# include the non-open-source counterpart to this file
+-include device/semc/robyn/robyn-vendor.mk
+
 # Camera
 USE_CAMERA_STUB := true
 
 # Info
 TARGET_BOOTLOADER_BOARD_NAME := delta
 TARGET_OTA_ASSERT_DEVICE := E10i,E10a,robyn
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=delta
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=robyn
 
 # Touchscreen
 BOARD_USE_LEGACY_TOUCHSCREEN := true
