@@ -28,7 +28,7 @@ PRODUCT_MODEL := E10i
 
 # Boot files
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 endif
 
 # media configuration xml file
@@ -96,7 +96,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Prebuilt Binaries
 PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/app/FileManager.apk:system/app/FileManager.apk \
     device/semc/robyn/prebuilt/app/Torch.apk:system/app/Torch.apk \
     device/semc/robyn/prebuilt/bin/akmd2:system/bin/akmd2 \
     device/semc/robyn/prebuilt/bin/chargemon:system/bin/chargemon \
@@ -108,6 +107,8 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/bin/slidercounter:system/bin/slidercounter \
     device/semc/robyn/prebuilt/bin/updatemiscta:system/bin/updatemiscta \
     device/semc/robyn/prebuilt/bin/rild:system/bin/rild \
+	device/semc/robyn/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
+    device/semc/robyn/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
     device/semc/robyn/prebuilt/etc/firmware/fmc_init_1273.1.bts:system/etc/firmware/fmc_init_1273.1.bts \
     device/semc/robyn/prebuilt/etc/firmware/fmc_init_1273.2.bts:system/etc/firmware/fmc_init_1273.2.bts \
     device/semc/robyn/prebuilt/etc/firmware/fm_rx_init_1273.1.bts:system/etc/firmware/fm_rx_init_1273.1.bts \
@@ -169,6 +170,8 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/lib/libuim.so:system/lib/libuim.so \
     device/semc/robyn/prebuilt/lib/libwms.so:system/lib/libwms.so \
     device/semc/robyn/prebuilt/lib/libwmsts.so:system/lib/libwmsts.so \
+	device/semc/robyn/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
+    device/semc/robyn/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
     device/semc/robyn/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     device/semc/robyn/prebuilt/usr/keychars/robyn_keypad.kcm.bin:system/usr/keychars/robyn_keypad.kcm.bin \
     device/semc/robyn/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
