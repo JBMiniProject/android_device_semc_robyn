@@ -27,9 +27,6 @@
 # inherit from the common version
 -include device/semc/msm7x27-common/BoardConfigCommon.mk
 
-# Camera
-USE_CAMERA_STUB := true
-
 # Info
 TARGET_BOOTLOADER_BOARD_NAME := delta
 TARGET_OTA_ASSERT_DEVICE := E10i,E10a,robyn
@@ -39,8 +36,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += TARGET_BOOTLOADER_BOARD_NAME=robyn
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 # Recovery
-BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_USES_RECOVERY_CHARGEMODE := false
 BOARD_HAS_BOOT_RECOVERY := true
 BOARD_HAS_SMALL_RECOVERY := true
+BOARD_HAS_JANKY_BACKBUFFER := true
 BOARD_LDPI_RECOVERY := true
