@@ -37,8 +37,8 @@ PRODUCT_COPY_FILES += \
 
 # Wifi firmware
 PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/tiwlan.ini:system/etc/wifi/tiwlan.ini \
-    device/semc/robyn/prebuilt/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini
+    device/semc/robyn/prebuilt/wlan/tiwlan.ini:system/etc/wifi/tiwlan.ini \
+    device/semc/robyn/prebuilt/wlan/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini
 
 # Recovery resources
 PRODUCT_COPY_FILES += \
@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
 
 # Touchsceen
 PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+    device/semc/robyn/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # Robyn uses low-density artwork where available
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi
@@ -170,9 +170,8 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/lib/libuim.so:system/lib/libuim.so \
     device/semc/robyn/prebuilt/lib/libwms.so:system/lib/libwms.so \
     device/semc/robyn/prebuilt/lib/libwmsts.so:system/lib/libwmsts.so \
-	device/semc/robyn/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
+    device/semc/robyn/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
     device/semc/robyn/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
-    device/semc/robyn/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
     device/semc/robyn/prebuilt/usr/keychars/robyn_keypad.kcm.bin:system/usr/keychars/robyn_keypad.kcm.bin \
     device/semc/robyn/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
     device/semc/robyn/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
