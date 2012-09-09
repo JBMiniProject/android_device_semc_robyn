@@ -45,11 +45,14 @@ debug.composition.type=mdp
 debug.performance.tuning=1
 debug.sf.hw=1
 debug.gr.numframebuffers=3
+debug.gr.swapinterval=0
 ro.compcache.default=18
 video.accelerate.hw=1
 persist.service.zram=1
 persist.sys.use_16bpp_alpha=1
 persist.sys.use_dithering=1
+com.qc.hardware=true
+windowsmgr.max_events_per_sec=150
 
 # LCD
 ro.opengles.version=131072
@@ -76,3 +79,7 @@ ro.ril.def.agps.feature=1
 # Some stuff
 pm.sleep_mode=2
 debug.enabletr=false
+
+# Camera
+debug.camcorder.disablemeta=1
+persist.pmem.camera=4000000
