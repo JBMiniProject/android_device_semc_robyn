@@ -27,7 +27,7 @@
 <!ATTLIST EncoderProfile duration (30|60) #REQUIRED>
 <!ATTLIST EncoderProfile cameraId (0) #REQUIRED>
 <!ELEMENT Video EMPTY>
-<!ATTLIST Video codec (h264|m4v) #REQUIRED>
+<!ATTLIST Video codec (h264|3gpp) #REQUIRED>
 <!ATTLIST Video bitRate CDATA #REQUIRED>
 <!ATTLIST Video width CDATA #REQUIRED>
 <!ATTLIST Video height CDATA #REQUIRED>
@@ -38,7 +38,7 @@
 <!ATTLIST Audio sampleRate CDATA #REQUIRED>
 <!ATTLIST Audio channels (1|2) #REQUIRED>
 <!ELEMENT ImageEncoding EMPTY>
-<!ATTLIST ImageEncoding quality (90|80|70|60|50|40) #REQUIRED>
+<!ATTLIST ImageEncoding quality (100|90|80|70|60|50|40) #REQUIRED>
 <!ELEMENT ImageDecoding EMPTY>
 <!ATTLIST ImageDecoding memCap CDATA #REQUIRED>
 <!ELEMENT Camera EMPTY>
@@ -77,7 +77,7 @@
 <!ATTLIST VideoEditorCap maxOutputFrameHeight CDATA #REQUIRED>
 <!ATTLIST VideoEditorCap maxPrefetchYUVFrames CDATA #REQUIRED>
 <!ELEMENT ExportVideoProfile EMPTY>
-<!ATTLIST ExportVideoProfile name (h264|m4v) #REQUIRED>
+<!ATTLIST ExportVideoProfile name (h264) #REQUIRED>
 <!ATTLIST ExportVideoProfile profile CDATA #REQUIRED>
 <!ATTLIST ExportVideoProfile level CDATA #REQUIRED>
 ]>
@@ -89,12 +89,12 @@
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0">
 
-        <EncoderProfile quality="high" fileFormat="mp4" duration="60">
+        <EncoderProfile quality="high" fileFormat="3gp" duration="60">
             <Video codec="h264"
                    bitRate="2500000"
                    width="320"
                    height="240"
-                   frameRate="25" />
+                   frameRate="27" />
             <Audio codec="aac"
                    bitRate="120000"
                    sampleRate="48000"
@@ -114,6 +114,7 @@
                    channels="1" />
         </EncoderProfile>
 
+        <ImageEncoding quality="100" />
         <ImageEncoding quality="90" />
         <ImageEncoding quality="80" />
         <ImageEncoding quality="70" />
@@ -124,7 +125,6 @@
     </CamcorderProfiles>
 
     <EncoderOutputFileFormat name="3gp" />
-    <EncoderOutputFileFormat name="mp4" />
 
     <!--
          If a codec is not enabled, it is invisible to the applications
@@ -190,7 +190,7 @@
     <!--
       Codec = h.263, Baseline profile, level 0
     -->
-    <ExportVideoProfile name="h264" profile= "1" level="1"/>
+    <ExportVideoProfile name="h264" profile= "1" level="16"/>
     <!--
       Codec = mpeg4, Simple profile, level 3
     -->
