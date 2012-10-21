@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/bin/slidercounter:system/bin/slidercounter \
     device/semc/robyn/prebuilt/bin/updatemiscta:system/bin/updatemiscta \
     device/semc/robyn/prebuilt/bin/rild:system/bin/rild \
-	device/semc/robyn/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
+    device/semc/robyn/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
     device/semc/robyn/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
     device/semc/robyn/prebuilt/etc/firmware/fmc_init_1273.1.bts:system/etc/firmware/fmc_init_1273.1.bts \
     device/semc/robyn/prebuilt/etc/firmware/fmc_init_1273.2.bts:system/etc/firmware/fmc_init_1273.2.bts \
