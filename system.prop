@@ -86,7 +86,7 @@ persist.pmem.camera=4000000
 
 # OTA Update Center
 otaupdater.otaid=jbmpx10m
-otaupdater.otaver=beta1
-otaupdater.otatime=20120908-2045
+otaupdater.otaver=rc1
+otaupdater.otatime=20121022-1200
 otaupdater.noflash=1
 otaudpater.rebootcmd=$$NULL$$
