@@ -64,13 +64,6 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/recovery/res/images/progress_fill.png:recovery/root/res/images/progress_fill.png \
     device/semc/robyn/recovery/res/images/stitch.png:recovery/root/res/images/stitch.png
 
-# Sensors + Lights
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/lights.default.so:system/lib/hw/lights.default.so \
-    $(LOCAL_PATH)/prebuilt/lights.delta.so:system/lib/hw/lights.delta.so \
-    $(LOCAL_PATH)/prebuilt/sensors.delta.so:system/lib/hw/sensors.delta.so \
-    $(LOCAL_PATH)/prebuilt/sensors.goldfish.so:system/lib/hw/sensors.goldfish.so
-
 # Torch
 PRODUCT_PACKAGES += \
     Torch
@@ -109,67 +102,6 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/bin/rild:system/bin/rild \
     device/semc/robyn/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
     device/semc/robyn/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
-    device/semc/robyn/prebuilt/etc/firmware/fmc_init_1273.1.bts:system/etc/firmware/fmc_init_1273.1.bts \
-    device/semc/robyn/prebuilt/etc/firmware/fmc_init_1273.2.bts:system/etc/firmware/fmc_init_1273.2.bts \
-    device/semc/robyn/prebuilt/etc/firmware/fm_rx_init_1273.1.bts:system/etc/firmware/fm_rx_init_1273.1.bts \
-    device/semc/robyn/prebuilt/etc/firmware/fm_rx_init_1273.2.bts:system/etc/firmware/fm_rx_init_1273.2.bts \
-    device/semc/robyn/prebuilt/etc/firmware/fm_tx_init_1273.1.bts:system/etc/firmware/fm_tx_init_1273.1.bts \
-    device/semc/robyn/prebuilt/etc/firmware/fm_tx_init_1273.2.bts:system/etc/firmware/fm_tx_init_1273.2.bts \
-    device/semc/robyn/prebuilt/etc/firmware/TIInit_7.2.31.bts:system/etc/firmware/TIInit_7.2.31.bts \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim1.rle:system/etc/semc/chargemon/anim1.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim2.rle:system/etc/semc/chargemon/anim2.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim3.rle:system/etc/semc/chargemon/anim3.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim4.rle:system/etc/semc/chargemon/anim4.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim5.rle:system/etc/semc/chargemon/anim5.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim6.rle:system/etc/semc/chargemon/anim6.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim7.rle:system/etc/semc/chargemon/anim7.rle \
-    device/semc/robyn/prebuilt/etc/semc/chargemon/anim8.rle:system/etc/semc/chargemon/anim8.rle \
-    device/semc/robyn/prebuilt/etc/sensors.conf:system/etc/sensors.conf \
-    device/semc/robyn/prebuilt/lib/libauth.so:system/lib/libauth.so \
-    device/semc/robyn/prebuilt/lib/libcamera.so:system/lib/libcamera.so \
-    device/semc/robyn/prebuilt/lib/libcm.so:system/lib/libcm.so \
-    device/semc/robyn/prebuilt/lib/libdiag.so:system/lib/libdiag.so \
-    device/semc/robyn/prebuilt/lib/libdll.so:system/lib/libdll.so \
-    device/semc/robyn/prebuilt/lib/libdsm.so:system/lib/libdsm.so \
-    device/semc/robyn/prebuilt/lib/libdss.so:system/lib/libdss.so \
-    device/semc/robyn/prebuilt/lib/libgsdi_exp.so:system/lib/libgsdi_exp.so \
-    device/semc/robyn/prebuilt/lib/libgstk_exp.so:system/lib/libgstk_exp.so \
-    device/semc/robyn/prebuilt/lib/libmiscta.so:system/lib/libmiscta.so \
-    device/semc/robyn/prebuilt/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
-    device/semc/robyn/prebuilt/lib/libmmgsdilib.so:system/lib/libmmgsdilib.so \
-    device/semc/robyn/prebuilt/lib/libmmipl.so:system/lib/libmmipl.so \
-    device/semc/robyn/prebuilt/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
-    device/semc/robyn/prebuilt/lib/libmm-omxcore.so:system/lib/libmm-omxcore.so \
-    device/semc/robyn/prebuilt/lib/libnv.so:system/lib/libnv.so \
-    device/semc/robyn/prebuilt/lib/liboemcamera.so:system/lib/liboemcamera.so \
-    device/semc/robyn/prebuilt/lib/liboem_rapi.so:system/lib/liboem_rapi.so \
-    device/semc/robyn/prebuilt/lib/libOmxAacDec.so:system/lib/libOmxAacDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxAacEnc.so:system/lib/libOmxAacEnc.so \
-    device/semc/robyn/prebuilt/lib/libOmxAmrDec.so:system/lib/libOmxAmrDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxAmrEnc.so:system/lib/libOmxAmrEnc.so \
-    device/semc/robyn/prebuilt/lib/libOmxAmrRtpDec.so:system/lib/libOmxAmrRtpDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxAmrwbDec.so:system/lib/libOmxAmrwbDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxEvrcDec.so:system/lib/libOmxEvrcDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxEvrcEnc.so:system/lib/libOmxEvrcEnc.so \
-    device/semc/robyn/prebuilt/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-    device/semc/robyn/prebuilt/lib/libOmxMp3Dec.so:system/lib/libOmxMp3Dec.so \
-    device/semc/robyn/prebuilt/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-    device/semc/robyn/prebuilt/lib/libOmxQcelp13Enc.so:system/lib/libOmxQcelp13Enc.so \
-    device/semc/robyn/prebuilt/lib/libOmxQcelpDec.so:system/lib/libOmxQcelpDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
-    device/semc/robyn/prebuilt/lib/libOmxWmaDec.so:system/lib/libOmxWmaDec.so \
-    device/semc/robyn/prebuilt/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so \
-    device/semc/robyn/prebuilt/lib/liboncrpc.so:system/lib/liboncrpc.so \
-    device/semc/robyn/prebuilt/lib/libopencore_common.so:system/lib/libopencore_common.so \
-    device/semc/robyn/prebuilt/lib/libpbmlib.so:system/lib/libpbmlib.so \
-    device/semc/robyn/prebuilt/lib/libqmi.so:system/lib/libqmi.so \
-    device/semc/robyn/prebuilt/lib/libqueue.so:system/lib/libqueue.so \
-    device/semc/robyn/prebuilt/lib/librpc.so:system/lib/librpc.so \
-    device/semc/robyn/prebuilt/lib/libril.so:system/lib/libril.so \
-    device/semc/robyn/prebuilt/lib/libsemc_ril.so:system/lib/libsemc_ril.so \
-    device/semc/robyn/prebuilt/lib/libuim.so:system/lib/libuim.so \
-    device/semc/robyn/prebuilt/lib/libwms.so:system/lib/libwms.so \
-    device/semc/robyn/prebuilt/lib/libwmsts.so:system/lib/libwmsts.so \
     device/semc/robyn/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
     device/semc/robyn/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
     device/semc/robyn/prebuilt/usr/keychars/robyn_keypad.kcm.bin:system/usr/keychars/robyn_keypad.kcm.bin \

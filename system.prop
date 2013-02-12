@@ -84,9 +84,13 @@ debug.enabletr=false
 debug.camcorder.disablemeta=1
 persist.pmem.camera=4000000
 
+# Theme
+persist.sys.themeId=JB Mini Theme
+persist.sys.themePackageName=com.oxt.theme.jbmini
+
 # OTA Update Center
 otaupdater.otaid=jbmpx10m
-otaupdater.otaver=rc1b
-otaupdater.otatime=20121022-1200
+otaupdater.otaver=release2
+otaupdater.otatime=20130209-1200
 otaupdater.noflash=1
 otaudpater.rebootcmd=$$NULL$$
