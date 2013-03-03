@@ -35,11 +35,6 @@ endif
 PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/media_profiles.xml:/system/etc/media_profiles.xml
 
-# Wifi firmware
-PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/wlan/tiwlan.ini:system/etc/wifi/tiwlan.ini \
-    device/semc/robyn/prebuilt/wlan/tiwlan_ap.ini:system/etc/wifi/softap/tiwlan_ap.ini
-
 # Recovery resources
 PRODUCT_COPY_FILES += \
     device/semc/robyn/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
@@ -100,8 +95,7 @@ PRODUCT_COPY_FILES += \
     device/semc/robyn/prebuilt/bin/slidercounter:system/bin/slidercounter \
     device/semc/robyn/prebuilt/bin/updatemiscta:system/bin/updatemiscta \
     device/semc/robyn/prebuilt/bin/rild:system/bin/rild \
-    device/semc/robyn/prebuilt/bin/tiap_cu:system/bin/tiap_cu \
-    device/semc/robyn/prebuilt/bin/tiap_loader:system/bin/tiap_loader \
+    device/semc/robyn/prebuilt/etc/tiwlan.ini:system/etc/tiwlan.ini \
     device/semc/robyn/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
     device/semc/robyn/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
     device/semc/robyn/prebuilt/usr/keychars/robyn_keypad.kcm.bin:system/usr/keychars/robyn_keypad.kcm.bin \

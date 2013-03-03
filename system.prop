@@ -15,11 +15,10 @@ ro.ril.hsupa.category=5
 ro.ril.gprsclass=10
 
 # Wlan
-wifi.interface=tiwlan0
-wifi.supplicant_scan_interval=45
-wifi.hotspot.ti=1
-wifi.ap.interface=tiap0
-
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=180
+wifi.softap.interface=wlan0
+wifi.softapconcurrent.interface=wlan0
 
 # Media
 ro.media.dec.jpeg.memcap=10000000
@@ -53,6 +52,7 @@ persist.sys.use_16bpp_alpha=1
 persist.sys.use_dithering=1
 com.qc.hardware=true
 windowsmgr.max_events_per_sec=150
+debug.mdpcomp.logs=0
 
 # LCD
 ro.opengles.version=131072
