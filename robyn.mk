@@ -18,6 +18,8 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
+-include device/semc/msm7x27-common/msm7x27.mk
+
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := robyn
 PRODUCT_DEVICE := robyn
