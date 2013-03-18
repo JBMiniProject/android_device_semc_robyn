@@ -16,13 +16,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
-# Inherit from the common version
--include device/semc/msm7x27-common/msm7x27.mk
-
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := jbmp_robyn
+PRODUCT_NAME := robyn
 PRODUCT_DEVICE := robyn
 PRODUCT_MODEL := E10i
 
@@ -31,75 +28,59 @@ ifeq ($(TARGET_PREBUILT_KERNEL),)
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 endif
 
-# media configuration xml file
-PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/media_profiles.xml:/system/etc/media_profiles.xml
-
 # Recovery resources
 PRODUCT_COPY_FILES += \
-    device/semc/robyn/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
-    device/semc/robyn/recovery/res/images/icon_firmware_install.png:recovery/root/res/images/icon_firmware_install.png \
-    device/semc/robyn/recovery/res/images/icon_clockwork.png:recovery/root/res/images/icon_clockwork.png \
-    device/semc/robyn/recovery/res/images/icon_error.png:recovery/root/res/images/icon_error.png \
-    device/semc/robyn/recovery/res/images/icon_installing.png:recovery/root/res/images/icon_installing.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay01.png:recovery/root/res/images/icon_installing_overlay01.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay02.png:recovery/root/res/images/icon_installing_overlay02.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay03.png:recovery/root/res/images/icon_installing_overlay03.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay04.png:recovery/root/res/images/icon_installing_overlay04.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay05.png:recovery/root/res/images/icon_installing_overlay05.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay06.png:recovery/root/res/images/icon_installing_overlay06.png \
-    device/semc/robyn/recovery/res/images/icon_installing_overlay07.png:recovery/root/res/images/icon_installing_overlay07.png \
-    device/semc/robyn/recovery/res/images/indeterminate01.png:recovery/root/res/images/indeterminate01.png \
-    device/semc/robyn/recovery/res/images/indeterminate02.png:recovery/root/res/images/indeterminate02.png \
-    device/semc/robyn/recovery/res/images/indeterminate03.png:recovery/root/res/images/indeterminate03.png \
-    device/semc/robyn/recovery/res/images/indeterminate04.png:recovery/root/res/images/indeterminate04.png \
-    device/semc/robyn/recovery/res/images/indeterminate05.png:recovery/root/res/images/indeterminate05.png \
-    device/semc/robyn/recovery/res/images/indeterminate06.png:recovery/root/res/images/indeterminate06.png \
-    device/semc/robyn/recovery/res/images/progress_empty.png:recovery/root/res/images/progress_empty.png \
-    device/semc/robyn/recovery/res/images/progress_fill.png:recovery/root/res/images/progress_fill.png \
-    device/semc/robyn/recovery/res/images/stitch.png:recovery/root/res/images/stitch.png
-
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
-# Touchsceen
-PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+    $(LOCAL_PATH)/recovery/res/images/icon_firmware_error.png:recovery/root/res/images/icon_firmware_error.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_firmware_install.png:recovery/root/res/images/icon_firmware_install.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_clockwork.png:recovery/root/res/images/icon_clockwork.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_error.png:recovery/root/res/images/icon_error.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing.png:recovery/root/res/images/icon_installing.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay01.png:recovery/root/res/images/icon_installing_overlay01.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay02.png:recovery/root/res/images/icon_installing_overlay02.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay03.png:recovery/root/res/images/icon_installing_overlay03.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay04.png:recovery/root/res/images/icon_installing_overlay04.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay05.png:recovery/root/res/images/icon_installing_overlay05.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay06.png:recovery/root/res/images/icon_installing_overlay06.png \
+    $(LOCAL_PATH)/recovery/res/images/icon_installing_overlay07.png:recovery/root/res/images/icon_installing_overlay07.png \
+    $(LOCAL_PATH)/recovery/res/images/indeterminate01.png:recovery/root/res/images/indeterminate01.png \
+    $(LOCAL_PATH)/recovery/res/images/indeterminate02.png:recovery/root/res/images/indeterminate02.png \
+    $(LOCAL_PATH)/recovery/res/images/indeterminate03.png:recovery/root/res/images/indeterminate03.png \
+    $(LOCAL_PATH)/recovery/res/images/indeterminate04.png:recovery/root/res/images/indeterminate04.png \
+    $(LOCAL_PATH)/recovery/res/images/indeterminate05.png:recovery/root/res/images/indeterminate05.png \
+    $(LOCAL_PATH)/recovery/res/images/indeterminate06.png:recovery/root/res/images/indeterminate06.png \
+    $(LOCAL_PATH)/recovery/res/images/progress_empty.png:recovery/root/res/images/progress_empty.png \
+    $(LOCAL_PATH)/recovery/res/images/progress_fill.png:recovery/root/res/images/progress_fill.png \
+    $(LOCAL_PATH)/recovery/res/images/stitch.png:recovery/root/res/images/stitch.png
 
 # Robyn uses low-density artwork where available
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
-
 PRODUCT_LOCALES += \
  		ldpi \
 		mdpi
 
-# LCD Density
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.sf.lcd_density=120
-
-# We have enough storage space to hold precise GC data
-PRODUCT_TAGS += dalvik.gc.type-precise
-
 # Prebuilt Binaries
 PRODUCT_COPY_FILES += \
-    device/semc/robyn/prebuilt/app/Torch.apk:system/app/Torch.apk \
-    device/semc/robyn/prebuilt/bin/akmd2:system/bin/akmd2 \
-    device/semc/robyn/prebuilt/bin/chargemon:system/bin/chargemon \
-    device/semc/robyn/prebuilt/bin/inputattach:system/bin/inputattach \
-    device/semc/robyn/prebuilt/bin/nvimport:system/bin/nvimport \
-    device/semc/robyn/prebuilt/bin/port-bridge:system/bin/port-bridge \
-    device/semc/robyn/prebuilt/bin/qmuxd:system/bin/qmuxd \
-    device/semc/robyn/prebuilt/bin/semc_chargalg:system/bin/semc_chargalg \
-    device/semc/robyn/prebuilt/bin/slidercounter:system/bin/slidercounter \
-    device/semc/robyn/prebuilt/bin/updatemiscta:system/bin/updatemiscta \
-    device/semc/robyn/prebuilt/bin/rild:system/bin/rild \
-    device/semc/robyn/prebuilt/etc/tiwlan.ini:system/etc/tiwlan.ini \
-    device/semc/robyn/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
-    device/semc/robyn/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
-    device/semc/robyn/prebuilt/usr/keychars/robyn_keypad.kcm.bin:system/usr/keychars/robyn_keypad.kcm.bin \
-    device/semc/robyn/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
-    device/semc/robyn/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/semc/robyn/prebuilt/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/semc/robyn/prebuilt/usr/keylayout/robyn_keypad.kl:system/usr/keylayout/robyn_keypad.kl
+    $(LOCAL_PATH)/prebuilt/app/Torch.apk:system/app/Torch.apk \
+    $(LOCAL_PATH)/prebuilt/bin/akmd2:system/bin/akmd2 \
+    $(LOCAL_PATH)/prebuilt/bin/chargemon:system/bin/chargemon \
+    $(LOCAL_PATH)/prebuilt/bin/semc_chargalg:system/bin/semc_chargalg \
+    $(LOCAL_PATH)/prebuilt/etc/media_profiles.xml:/system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/prebuilt/etc/sensors.conf:system/etc/sensors.conf \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim1.rle:system/etc/semc/chargemon/anim1.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim2.rle:system/etc/semc/chargemon/anim2.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim3.rle:system/etc/semc/chargemon/anim3.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim4.rle:system/etc/semc/chargemon/anim4.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim5.rle:system/etc/semc/chargemon/anim5.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim6.rle:system/etc/semc/chargemon/anim6.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim7.rle:system/etc/semc/chargemon/anim7.rle \
+    $(LOCAL_PATH)/prebuilt/etc/semc/chargemon/anim8.rle:system/etc/semc/chargemon/anim8.rle \
+    $(LOCAL_PATH)/prebuilt/etc/tiwlan.ini:system/etc/tiwlan.ini \
+    $(LOCAL_PATH)/prebuilt/framework/com.dsi.ant.antradio_library.jar:system/framework/com.dsi.ant.antradio_library.jar \
+    $(LOCAL_PATH)/prebuilt/lib/libaudioeq.so:system/lib/libaudioeq.so \
+	$(LOCAL_PATH)/prebuilt/usr/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
+    $(LOCAL_PATH)/prebuilt/usr/keychars/robyn_keypad.kcm.bin:system/usr/keychars/robyn_keypad.kcm.bin \
+    $(LOCAL_PATH)/prebuilt/usr/keylayout/7k_handset.kl:system/usr/keylayout/7k_handset.kl \
+    $(LOCAL_PATH)/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    $(LOCAL_PATH)/prebuilt/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    $(LOCAL_PATH)/prebuilt/usr/keylayout/robyn_keypad.kl:system/usr/keylayout/robyn_keypad.kl
