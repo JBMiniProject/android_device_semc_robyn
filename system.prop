@@ -74,6 +74,7 @@ ro.max.fling_velocity=4000
 debug.qctwa.statusbar=1
 debug.qctwa.preservebuf=1
 debug.mdpcomp.logs=0
+sys.mem.max_hidden_apps=3
 
 # LCD
 ro.sf.lcd_density=120
@@ -90,7 +91,11 @@ dalvik.vm.dexopt-flags=m=y
 dalvik.vm.checkjni=0
 ro.kernel.android.checkjni=0
 dalvik.vm.verify_bytecode=false
+dalvik.vm.heapstartsize=5m
 dalvik.vm.heapsize=32m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=2m
 dalvik.vm.execution-mode=int:jit
 dalvik.vm.dexopt-data-only=1
 dalvik.gc.type-precise
